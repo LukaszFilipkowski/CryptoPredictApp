@@ -205,7 +205,8 @@ class CryptoOracleApp:
             self.ax.plot(dates_window[:original_len], value_window[:original_len], color='blue', linestyle='-')
 
         if self.predicted > 0:
-            self.ax.plot(dates_window[original_len-1:], value_window[original_len-1:], color='red', marker='o', markersize=6, linestyle='-')
+            self.ax.plot(dates_window[original_len:], value_window[original_len:], color='red', marker='o', markersize=6, linestyle='')
+            self.ax.plot(dates_window[original_len-1:], value_window[original_len-1:], color='red', marker='', markersize=6, linestyle='-')
 
         self.ax.set_title("Wykres danych")
         self.ax.set_xlabel("Time")
