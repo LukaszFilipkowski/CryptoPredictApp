@@ -318,7 +318,7 @@ class CryptoOracleApp:
                     x=pred_date,
                     ymin=lower,
                     ymax=upper,
-                    colors="#F5645B",
+                    colors="#FA8078",
                     linestyles="dashed",
                     linewidth=1.5,
                     alpha=0.8)
@@ -336,13 +336,13 @@ class CryptoOracleApp:
                 textcoords="offset points",      # mówi Matplotlib, że przesunięcie (15, 15) jest w punktach (points), a nie np. w jednostkach danych osi X/Y
                 bbox=dict(                       # obramowanie tekstu
                     boxstyle="round,pad=0.4",
-                    fc="lightyellow",            # kolor tła
-                    ec="red",                    # kolor obramowania
+                    fc="#D5F5F7",            # kolor tła
+                    ec="#E02519",            # kolor obramowania
                     lw=1
                     ),
                 arrowprops=dict(                 # strzałka wskazująca punkt
                     arrowstyle="->",
-                    color="red"
+                    color="#E02519"
                     ),
                 fontsize=9)                      # rozmiar czcionki
             
