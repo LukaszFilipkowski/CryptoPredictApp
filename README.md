@@ -50,6 +50,23 @@ Architektura uruchomieniowa
 |Wymagane biblioteki z architektury rozwoju|Możliwość pracy z aplikacją|-|
 
 ## 5. Procedura uruchomieniowa
+Aplikacja została napisana w języku Python i działa jako aplikacja okienkowa.
+W aktualnej wersji uruchamiana jest poprzez wykonanie kodu źródłowego, bez użycia pliku wykonywalnego .exe.
+
+1. Wymagania systemowe.
+ - Python 3.10 lub nowszy
+ - System operacyjny Windows/macOS
+ - Dostęp do terminala
+
+2. Instalacja wymaganych bibliotek
+
+Przed pierwszym uruchomieniem należy zainstalować wszystkie wymagane biblioteki wskazane w architekturze rozwoju.
+
+3. Uruchomienie aplikacji
+
+Aplikacja uruchamiana jest poprzez wykonanie głównego pliku programu. Należy otworzyć terminal w katalogu z plikiem programu (MAIN.py) i  wykonać polecenie "python MAIN.py"
+
+Po wykonaniu tego polecenia otwiera się graficzne okno aplikacji Crypto Oracle Analytics.
 
 ## 6. Testy akceptacyjne
 
