@@ -1,3 +1,19 @@
+# ---------------------------------------------------------------
+# Crypto-Oracle-Analytics (COA)
+# 
+# Autor: Łukasz Filipkowski, Natalia Kurczyńska
+# Rok: 2026
+# 
+# Uwaga: W trakcie tworzenia kodu korzystano z pomocy sztucznej inteligencji
+#        (ChatGPT) w celu wyjaśnienia składni, przykładów implementacji
+#        i rozwiązań problemów z Tkinter, Matplotlib oraz ARIMA.
+#        Ze względu na charakter wsparcia AI trudno wskazać konkretne linie kodu,
+#        które zostały bezpośrednio zainspirowane sugestiami.
+#        Wszystkie decyzje projektowe i logika biznesowa są autorstwa autora.
+# ---------------------------------------------------------------
+
+
+
 # -------------------
 # Import paczek
 # -------------------
@@ -142,7 +158,7 @@ class CryptoOracleApp:
         self.plot_frame = ttk.Frame(parent)
         self.plot_frame.grid(row=0, column=1, sticky="nsew", padx=5) # frame grid rozciąga się w kierunkach nsew i znajduje sie w 2 kolumnie i 1 wierszu siatki aplikacji
 
-        self.fig = Figure(figsize=(5, 4), dpi=100) # tworzy obiekt wykresu (rozmiar + jakość)
+        self.fig = Figure(figsize=(5, 4), dpi=100, constrained_layout=True) # tworzy obiekt wykresu (rozmiar + jakość + automatyczne dopasowanie do krawędzi)
         self.ax = self.fig.add_subplot(111) # dodaje jedną oś (1x1, pierwszy wykres)
         self.ax.set_title("Wykres danych")
         self.ax.set_xlabel("Time")
@@ -328,11 +344,11 @@ class CryptoOracleApp:
                 label = f"Predykcja\n{pred_value:.4f}\nCI: [{lower:.2f}, {upper:.2f}]"
             else:
                 label = f"Predykcja\n{pred_value:.4f}"
-            # ---- dodanie adnotacji z wartością predykcji ----
+                
             self.ax.annotate(
                 label,                           # tekst adnotacji
                 xy=(pred_date, pred_value),      # punkt, do którego strzałka będzie wskazywać
-                xytext=(15, 15),                 # przesunięcie tekstu względem punktu
+                xytext=(15, -30),                 # przesunięcie tekstu względem punktu
                 textcoords="offset points",      # mówi Matplotlib, że przesunięcie (15, 15) jest w punktach (points), a nie np. w jednostkach danych osi X/Y
                 bbox=dict(                       # obramowanie tekstu
                     boxstyle="round,pad=0.4",
@@ -345,7 +361,7 @@ class CryptoOracleApp:
                     color="#E02519"
                     ),
                 fontsize=9)                      # rozmiar czcionki
-            
+
 
             # ---- czerwone kropki dla wszystkich predykcji (bez łączenia z poprzednią linią) ----
             self.ax.plot(dates_window[original_len:], value_window[original_len:], color='red', marker='o', markersize=6, linestyle='')
